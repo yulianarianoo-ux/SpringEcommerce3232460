@@ -13,9 +13,7 @@ import jakarta.persistence.Table;
 @Table(name ="usuarios")
 public class Usuario {
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)//anotacion JPA
-	
-	
+	@GeneratedValue(strategy= GenerationType.IDENTITY)//anotacion JPA	
 	private Integer id;
 	private String nombre;
 	private String telefono;
@@ -25,8 +23,7 @@ public class Usuario {
 	private String password;
 	
 	//relaciones en DB
-	@OneToMany(mappedBy="usuario")
-	
+	@OneToMany(mappedBy="usuario")	
 	private List<Producto> productos ;
 	
 	@OneToMany(mappedBy="usuario")

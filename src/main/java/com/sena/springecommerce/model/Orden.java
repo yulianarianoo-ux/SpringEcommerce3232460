@@ -8,10 +8,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "ordenes ")
+@Table(name = "ordenes")
 public class Orden {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // anotacion JPA
@@ -21,7 +22,7 @@ public class Orden {
 	private Double total;
 
 	@ManyToOne
-	private Usuario usuarios;
+	private Usuario usuario;
 
 	@OneToMany(mappedBy = "orden")
 	private List<DetalleOrden> detalle;
@@ -71,20 +72,20 @@ public class Orden {
 		this.total = total;
 	}
 
-	public Usuario getUsuarios() {
-		return usuarios;
-	}
-
-	public void setUsuarios(Usuario usuarios) {
-		this.usuarios = usuarios;
-	}
-
 	public List<DetalleOrden> getDetalle() {
 		return detalle;
 	}
 
 	public void setDetalle(List<DetalleOrden> detalle) {
 		this.detalle = detalle;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override
