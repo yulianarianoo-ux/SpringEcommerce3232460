@@ -87,7 +87,6 @@ public class Producto {
 		this.imagen = imagen;
 	}
 
-	
 	// sin relacion
 
 	public Usuario getUsuario() {
